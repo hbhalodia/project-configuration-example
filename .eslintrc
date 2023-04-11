@@ -1,0 +1,13 @@
+{
+	"root": true,
+	"extends": [
+		"plugin:@wordpress/eslint-plugin/recommended-with-formatting",
+		"plugin:import/recommended"
+	],
+	"rules": {
+		"no-console": "off"
+	},
+	"env": {
+		"browser": true
+	}
+}

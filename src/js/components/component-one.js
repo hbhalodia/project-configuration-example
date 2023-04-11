@@ -1,3 +1,3 @@
 import '../../scss/components/component-one.scss';
 
-console.log('yes');
+console.log( 'yes' );
