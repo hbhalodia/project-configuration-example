@@ -3,6 +3,7 @@ const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const JS_DIR = path.resolve(__dirname, 'src/js');
 const BUILD_DIR = path.resolve(__dirname, 'build');
@@ -48,6 +49,10 @@ const plugins = [
 	new MiniCssExtractPlugin({
 		filename: 'css/[name].css'
 	}),
+
+	new StyleLintPlugin({
+		files: ['**/*.scss'],
+	})
 ];
 
 // Rules for webpack.
