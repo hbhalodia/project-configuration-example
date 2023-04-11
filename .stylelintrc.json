@@ -1,0 +1,15 @@
+{
+	"ignoreFiles": [
+		"./build/**/*",
+		"**/*.css"
+	],
+	"extends": [
+		"stylelint-config-standard"
+	],
+	"rules": {
+		"block-no-empty": true,
+		"no-irregular-whitespace": true,
+		"color-named": "never",
+		"declaration-block-trailing-semicolon": "always"
+	}
+}
