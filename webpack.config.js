@@ -17,12 +17,22 @@ const componentEntries = components.reduce((accumulator, component) => {
 	return accumulator;
 }, {});
 
+// Get all style files.
+const styles = glob.sync('./src/scss/*.scss');
+
+// Create entry points for each style.
+const cssFileEntries = styles.reduce((accumulator, component) => {
+	const name = path.basename(component, '.scss');
+	accumulator[`${name}`] = component;
+	return accumulator;
+}, {});
+
 const defaultEntry = {
 	index: JS_DIR + '/index.js',
 }
 
 // entry object for webpack.
-const entry = Object.assign({}, defaultEntry, componentEntries);
+const entry = Object.assign({}, defaultEntry, componentEntries, cssFileEntries);
 
 // Output object for webpack.
 const output = {
