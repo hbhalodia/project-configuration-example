@@ -7,8 +7,10 @@
 		"build": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"start": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
 		"lint:css": "stylelint ./src/scss/",
+		"lint:css:fix": "npm run lint:css -- --fix",
 		"lint-staged": "lint-staged",
 		"lint:js": "eslint ./src/js/",
+		"lint:js:fix": "npm run lint:js -- --fix",
 		"prepare": "husky install"
 	},
 	"keywords": [],
