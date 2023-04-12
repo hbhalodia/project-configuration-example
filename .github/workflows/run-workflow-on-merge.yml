@@ -2,9 +2,8 @@ name: Pull Request Workflow
 run-name: ${{ github.actor }} Pull Request Workflow.
 on:
   pull_request:
-    types:
-      - closed
-      - opened
+    types: [closed, opened]
+
 jobs:
   if_opened:
     runs-on: ubuntu-latest
