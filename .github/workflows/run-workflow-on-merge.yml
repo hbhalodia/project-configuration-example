@@ -21,3 +21,8 @@ jobs:
         run: |
           echo "Merged Pull Request Title: ${{ github.event.pull_request.title }}"
           echo "Merged Pull Request Number: ${{ github.event.pull_request.number }}"
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.event.pull_request.head.ref }}
+          delete_branch: true
