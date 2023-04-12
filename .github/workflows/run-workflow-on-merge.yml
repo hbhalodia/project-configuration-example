@@ -6,7 +6,6 @@ on:
 jobs:
   PR_Open:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.action == 'opened' && github.event.pull_request.commits == 1
     steps:
       - uses: actions/checkout@v3
       - name: Print Pull Request Title and Number
