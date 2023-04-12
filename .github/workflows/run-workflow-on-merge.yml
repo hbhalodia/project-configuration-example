@@ -1,14 +1,24 @@
 name: My Workflow
 on:
   pull_request:
-    types: [opened]
+    types: [opened, closed]
 
 jobs:
   PR_Open:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.action == 'opened' && github.event.pull_request.commits == 1
     steps:
       - uses: actions/checkout@v3
       - name: Print Pull Request Title and Number
         run: |
           echo "Pull Request Title: ${{ github.event.pull_request.title }}"
           echo "Pull Request Number: ${{ github.event.pull_request.number }}"
+  PR_Merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Delete branch on merge
+        run: |
+          echo "Merged Pull Request Title: ${{ github.event.pull_request.title }}"
+          echo "Merged Pull Request Number: ${{ github.event.pull_request.number }}"
