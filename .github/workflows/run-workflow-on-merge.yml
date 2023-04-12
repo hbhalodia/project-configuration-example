@@ -2,8 +2,8 @@ name: Pull Request Workflow
 run-name: ${{ github.actor }} Pull Request Workflow.
 on:
   pull_request:
-    types: [closed, opened]
-
+    types:
+      - opened
 jobs:
   if_opened:
     runs-on: ubuntu-latest
@@ -13,10 +13,3 @@ jobs:
       - run: |
           echo "PR Number : ${{ github.event.pull_request.number }}"
           echo "PR Number : ${{ github.event.pull_request.number }}"
-  if_merged:
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          echo The PR was merged
