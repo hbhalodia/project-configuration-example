@@ -1,15 +1,13 @@
-name: Pull Request Workflow
-run-name: ${{ github.actor }} Pull Request Workflow.
+name: My Workflow
 on:
   pull_request:
-    types:
-      - opened
+    types: [opened]
+
 jobs:
-  if_opened:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Pull request title and number.
-      - uses: actions/checkout@v3
-      - run: |
-          echo "PR Number : ${{ github.event.pull_request.number }}"
-          echo "PR Number : ${{ github.event.pull_request.number }}"
+      - name: Print Pull Request Title and Number
+        run: |
+          echo "Pull Request Title: ${{ github.event.pull_request.title }}"
+          echo "Pull Request Number: ${{ github.event.pull_request.number }}"
