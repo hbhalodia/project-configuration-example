@@ -23,6 +23,6 @@ jobs:
           echo "Merged Pull Request Number: ${{ github.event.pull_request.number }}"
       - uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TEST_SECRET }}
           branch: ${{ github.event.pull_request.head.ref }}
           delete_branch: true
