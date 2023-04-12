@@ -4,10 +4,10 @@ on:
     types: [opened]
 
 jobs:
-  my-job:
+  PR_Open:
     runs-on: ubuntu-latest
     steps:
       - name: Print Pull Request Title and Number
-        run: |
+      - run: |
           echo "Pull Request Title: ${{ github.event.pull_request.title }}"
           echo "Pull Request Number: ${{ github.event.pull_request.number }}"
